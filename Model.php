@@ -93,7 +93,6 @@ class Model
         $dirPath = $this->cacheDirPath();
 
         if (!is_dir($dirPath)) {
-            log::info('not dir - ' . $dirPath);
             $this->createDir();
         }
 

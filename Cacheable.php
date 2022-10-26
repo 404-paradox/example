@@ -10,14 +10,13 @@ use function MongoDB\BSON\toJSON;
 trait Cacheable
 {
     /**
-     * get
+     * example method
      */
     public static function cacheAll(...$parameters): array
     {
         $model = CacheBuilder::build(self::modelName(), 'all');
 
         if (!$model->hasCache()) {
-            log::info('no cache go tosave');
             $model->saveCache(self::all()->toJSON());
         }
 
